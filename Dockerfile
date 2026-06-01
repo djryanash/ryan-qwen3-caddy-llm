@@ -19,7 +19,7 @@ ENV OLLAMA_HOST=127.0.0.1:11434
 # Back the model into the image layer 
 RUN ollama serve & \
     sleep 3 && \
-    ollama pull qwen3.5:2b
+    ollama pull qwen3.6:35b
 
 COPY Caddyfile /Caddyfile
 
