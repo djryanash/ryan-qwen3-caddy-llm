@@ -1,0 +1,12 @@
+:11435 {
+    @unauthorized not {
+        header Authorization "Bearer {$AUTH_KEY_1}"
+        header Authorization "Bearer {$AUTH_KEY_2}"
+        header Authorization "Bearer {$AUTH_KEY_3}"
+        header Authorization "Bearer {$AUTH_KEY_4}"
+        header Authorization "Bearer {$AUTH_KEY_5}"
+    }
+
+    respond @unauthorized "Unauthorized" 401
+    reverse_proxy 127.0.0.1:11434
+}
