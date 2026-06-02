@@ -1,4 +1,9 @@
 :11435 {
+    # Debug route
+    route /debug {
+        respond "Headers received: {header}"
+    }
+
     @no_auth {
         not header X-Api-Key "{$AUTH_KEY_1}"
         not header X-Api-Key "{$AUTH_KEY_2}"
@@ -7,5 +12,8 @@
         not header X-Api-Key "{$AUTH_KEY_5}"
     }
     respond @no_auth "Unauthorized" 401
-    reverse_proxy 127.0.0.1:11434
+
+    reverse_proxy 127.0.0.1:11434 {
+        header_up X-Api-Key {header.X-Api-Key}
+    }
 }
