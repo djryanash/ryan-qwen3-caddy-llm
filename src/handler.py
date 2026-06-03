@@ -1,11 +1,10 @@
 import runpod
 
-def streaming_handler(job):
-    for count in range(3):
-        result = f"This is the {count} generated output."
-        yield result
+def handler(job):
+    job_input = job["input"]  # Access the input from the request
 
-runpod.serverless.start({
-    "handler": streaming_handler,
-    "return_aggregate_stream": True  # Optional, makes results available via /run
-})
+    # Add your custom code here to process the input
+
+    return "Your job results"
+
+runpod.serverless.start({"handler": handler})  # Required
