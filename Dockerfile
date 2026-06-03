@@ -1,11 +1,5 @@
-FROM ollama/ollama
+FROM python:3.10-slim
+WORKDIR /app
 
-ENV OLLAMA_HOST=0.0.0.0
-EXPOSE 11434
-
-RUN apt-get update && apt-get install -y curl && rm -rf /var/lib/apt/lists/*
-
-COPY entrypoint.sh .
-RUN chmod +x entrypoint.sh
-
-ENTRYPOINT ["./entrypoint.sh"]
+# Simple command to start a web server on port 8080
+CMD ["python3", "-m", "http.server", "8080"]
