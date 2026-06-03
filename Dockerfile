@@ -1,4 +1,4 @@
-FROM python:3.10-slim
+FROM ollama/ollama 
 WORKDIR /app
 
 # Simple command to start a web server on port 8080
