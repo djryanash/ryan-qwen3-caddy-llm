@@ -14,3 +14,4 @@ curl -s https://3kmf7xu5nmcab7.api.runpod.ai/api/generate \
 }'
 
 echo "Runpod verified."
+
