@@ -35,5 +35,4 @@ Dockerfile qwen3_5_0_8b
 Dockerfile qwen3_6_27b
 simple-test.sh
 runpod_test.sh
-runpod-test.sh
 .DS_Store

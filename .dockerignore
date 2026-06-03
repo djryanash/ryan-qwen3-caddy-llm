@@ -1,9 +1,8 @@
-.dockerignore
-tmp/
-*.log
-.git/
-test.sh
-check-caddy.sh
-response.md
-Dockerfile qwen3_5_0_8b
-Dockerfile qwen3_6_27b
+.git
+.gitignore
+README.md
+tests/
+*.pyc
+__pycache__/
+.venv/
+venv/
